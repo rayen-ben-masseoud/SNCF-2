@@ -1,0 +1,26 @@
+{% extends "main/base.html"%}
+
+{%block title%}
+Login Here 
+{%endblock%}
+
+{% load crispy_forms_tags %}
+{%block content%}
+{% if user.is_authenticated %}
+    
+    <p> Vous êtes déjà en ligne </p>
+    <a href="/logout"> Se déconnecter </a>
+{% else %}
+    
+    <form method="post" class="form-group">
+        {% csrf_token%}
+        {{form|crispy}}
+        <p> Pas de Compte ? Créer un compte <a href="/register"> ici </a> </p>
+
+        <button type="submit" class="btn btn-success"> Se connecter </button>
+        
+    </form>
+    
+
+{%endif%}
+{%endblock%}
