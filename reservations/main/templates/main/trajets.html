@@ -7,8 +7,9 @@ trajets{%endblock%}
     <h1> Gares {{i.name}} </h1>
     {%for j in i.gare_depart.all%}
         {%csrf_token%}
-        <li> {{j}}</li>
-        
+        {%if j in t%}
+            <li>{{j}}</li>
+        {%endif%}
         
     {%endfor%}
 {%endfor%}

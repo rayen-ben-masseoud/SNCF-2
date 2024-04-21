@@ -6,22 +6,18 @@ Login Here
 
 {% load crispy_forms_tags %}
 {%block content%}
-{% if user.is_authenticated %}
-    
-    <p> Vous êtes déjà en ligne </p>
-    <a href="/accounts/logout"> Se déconnecter </a>
-{% else %}
-    
-    <form method="post" class="form-group" >
-        <p> Connectez-vous pour adfficher vos réservations ! </p>
-        {% csrf_token%}
-        {{form|crispy}}
-        <p> Pas de Compte ? Créer un compte <a href="/register"> ici </a> </p>
 
-        <button type="submit" class="btn btn-success"> Se connecter </button>
-        
-    </form>
     
+<form method="post" class="form-group" >
+    <p> Connectez-vous pour adfficher vos réservations ! </p>
+    {% csrf_token%}
+    {{form|crispy}}
+    <p> Pas de Compte ? Créer un compte <a href="/register"> ici </a> </p>
 
-{%endif%}
+    <button type="submit" class="btn btn-success"> Se connecter </button>
+    
+</form>
+
+
+
 {%endblock%}

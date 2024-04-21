@@ -7,7 +7,8 @@ urlpatterns = [
     path('trajets', views.trajets ,name="trajets"),
     path('reservations',views.reservations, name="reservations"),
     path('reservation/<int:id>',views.reservation, name="reservation"),
-    
-    
+    path('nouvelle_reservation',views.edit_reservation,name="ajouter reservation"),
+    path('edit_reservation/<int:id>',views.edit_reservation,name="modifier reservation"),
+    path('infos',views.infos,name="informations")
     
 ]

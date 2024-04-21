@@ -6,16 +6,16 @@ Mes réservations
 {%block content%}
 <h2> Mes Réservations </h2>
 <u1>
-    {% if user.is_authenticated%}
-        {% for i in r%}
-            {%csrf_token%}
-            <li> <a href="/reservation/{{i.id}}">Réservation numéro {{i.num_reservation}}</a></li>
-            
-
-        {%endfor%}
-    {%else%}
-        <p> Il faut <a href="/accounts/login"> vous connecter </a> d'abord</p>
     
-    {%endif%}
+    {% for i in r%}
+        {%csrf_token%}
+        <li> <a href="/reservation/{{i.id}}">Réservation numéro {{i.num_reservation}}</a></li>
+        
+
+    {%endfor%}
+    
+    
+    
 </u1>
+<a href="/nouvelle_reservation">Réserver maintenant </a>
 {%endblock%}
