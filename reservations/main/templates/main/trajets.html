@@ -2,12 +2,14 @@
 {%block title%}
 trajets{%endblock%}
 {%block content%}
+<h2> Trajets disponibles </h2>
 {%for i in g%}
     <h1> Gares {{i.name}} </h1>
     {%for j in i.gare_depart.all%}
-
         {%csrf_token%}
         <li> {{j}}</li>
+        
+        
     {%endfor%}
 {%endfor%}
 {%endblock%}

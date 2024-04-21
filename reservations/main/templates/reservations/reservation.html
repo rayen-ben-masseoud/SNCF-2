@@ -1,0 +1,22 @@
+{% extends "reservations/reservations.html" %}
+
+{%block title %}
+Réservation
+{%endblock%}
+{%block content%}
+<u1>
+    {% if user.is_authenticated%}
+        {%csrf_token%}
+        <li> Réservation numéro {{rs.num_reservation}}</li>
+        <p> </p>
+        <p> Date de réservation:  {{rs.date_reservation}}</p>
+        <p> Trajet:  {{rs.trajet}}</p>
+        <p> Numéro de place:  {{rs.num_place}}</p>
+        <p> Passager:  {{rs.passager}}</p>
+
+        
+    {%else%}
+        <p> Il faut <a href="/accounts/login"> vous connecter </a> d'abord</p>
+    
+    {%endif%}
+{%endblock%}

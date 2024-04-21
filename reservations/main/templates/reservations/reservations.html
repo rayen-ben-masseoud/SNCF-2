@@ -1,0 +1,21 @@
+{%extends 'main/base.html'%}
+{%block title %}
+Mes réservations
+{%endblock%}
+
+{%block content%}
+<h2> Mes Réservations </h2>
+<u1>
+    {% if user.is_authenticated%}
+        {% for i in r%}
+            {%csrf_token%}
+            <li> <a href="/reservation/{{i.id}}">Réservation numéro {{i.num_reservation}}</a></li>
+            
+
+        {%endfor%}
+    {%else%}
+        <p> Il faut <a href="/accounts/login"> vous connecter </a> d'abord</p>
+    
+    {%endif%}
+</u1>
+{%endblock%}

@@ -10,8 +10,8 @@ Home
 {% if user.is_authenticated %}
     
     <p> bonjour {{user.username}} </p>
-    <a href="/logout"> Se déconnecter </a>
+    <a href="/accounts/logout"> Se déconnecter </a>
 {% else %}
-    <p> Il faut se connecter</p>
+    <p> Connectez à votre compte</p>
 {%endif%}
 {%endblock%}
