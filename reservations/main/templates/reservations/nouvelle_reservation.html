@@ -2,14 +2,43 @@
 {%block title%}
 Créer une réservation
 {%endblock%}
-{% load crispy_forms_tags %}
+
 {% block content%}
+    {%load crispy_forms_tags%}
     <h2> {% if reservation%} Modifier Reservation {%else%} Ajouter reservation {%endif%}</h2>
     <form method="POST", class="form-group">
+        
         {%csrf_token%}
-        {{ form.as_p}}
+        <h1> Introduire les infos passager </h1>
+        {{form1|crispy}}
+        <h1> Introduire les infos réservations </h1>
+        {{ form|crispy}}
+        
+        
+
         <button type="submit" class="btn btn-success"> Valider </button>
+        {% if form1.errors or form.errors%}
+            <div class="alert alert-danger alert-dismissible col-12 mx-1" role="alert">
+                <div id="form_errors">
+                    {% for key, value in form1.errors.items %}
+                        <span class="fieldWrapper">
+                            {{ key }}:{{ value }}
+                        </span>
+                    {% endfor %}
+                    {% for key, value in form.errors.items %}
+                        <span class="fieldWrapper">
+                            {{ key }}:{{ value }}
+                        </span>
+                    {% endfor %}
+        
+                </div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endif %}
     </form>
+
     
 
 

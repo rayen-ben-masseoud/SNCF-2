@@ -1,15 +1,32 @@
+
 {%extends 'main/base.html'%}
+
+
 {%block title%}
 trajets{%endblock%}
 {%block content%}
 <h2> Trajets disponibles </h2>
 {%for i in g%}
-    <h1> Gares {{i.name}} </h1>
+    {%if i.name == 'Marseille Blancarde'%}
+        <h1> Gare {{i.name}} </h1>
+    {%else%}
+        <div class="img1">
+            <h1> Gare {{i.name}} </h1>
+            <img src="static/{{i.name}}.jpg" height=300px width=400px >
+            
+            
+        </div>
+        
+            
+    {%endif%}
     {%for j in i.gare_depart.all%}
         {%csrf_token%}
         {%if j in t%}
             <li>{{j}}</li>
+            
         {%endif%}
+        <p> </p>
+        <p> </p>
         
     {%endfor%}
 {%endfor%}
