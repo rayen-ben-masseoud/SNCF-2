@@ -66,7 +66,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],<img src="static/{{i.name}}.jpg" height=300px width=400px >
+            ],
+        },
+    },
+]
+
+WSGI_APPLICATION = 'reservations.wsgi.application'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -129,11 +135,8 @@ LOGIN_REDIRECT_URL="/"
 LOGOUT_REDIRECT_URL="/"
 
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    '/',
-    
-]
+
+
 # pour que le format de la date soit adéquat 
 
 
