@@ -140,3 +140,8 @@ LOGOUT_REDIRECT_URL="/"
 # pour que le format de la date soit adéquat 
 
 
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    '/',
+
+]
