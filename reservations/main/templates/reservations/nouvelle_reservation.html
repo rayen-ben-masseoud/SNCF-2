@@ -1,0 +1,28 @@
+{%extends 'main/base.html'%}
+{%block title%}
+Créer une réservation
+{%endblock%}
+
+{% block content%}
+    {%load crispy_forms_tags%}
+    <h2> {% if reservation%} Modifier Reservation {%else%} Ajouter reservation {%endif%}</h2>
+    <form method="POST", class="form-group">
+        
+        {%csrf_token%}
+        <h1> Introduire les infos passager </h1>
+        {{form1|crispy}}
+        <h1> Introduire les infos réservations </h1>
+        {{ form|crispy}}
+        
+        
+        <p>  </p>
+        <button type="submit" class="btn btn-success"> Valider </button>
+        
+    </form>
+
+    
+
+
+
+
+{% endblock%}

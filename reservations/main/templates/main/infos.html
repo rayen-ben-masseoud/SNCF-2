@@ -1,0 +1,22 @@
+{% extends "main/base.html"%}
+{%block title%}
+Mes informations
+{%endblock%}
+{%block content%}
+<u1>
+    
+    {%csrf_token%}
+    <li> Username: {{c}}</li>
+
+    <li> First name: {{c.first_name}} </li>
+
+    <li> Last name: {{c.last_name}} </li>
+
+    <li> Email:  {{c.email}}</li>
+
+        
+
+        
+    
+</u1>    
+{%endblock%}

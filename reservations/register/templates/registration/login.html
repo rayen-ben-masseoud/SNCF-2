@@ -1,0 +1,23 @@
+{% extends "main/base.html"%}
+
+{%block title%}
+Login Here 
+{%endblock%}
+
+{% load crispy_forms_tags %}
+{%block content%}
+
+    
+<form method="post" class="form-group" >
+    <p> Connectez-vous pour adfficher vos réservations ! </p>
+    {% csrf_token%}
+    {{form|crispy}}
+    <p> Pas de Compte ? Créer un compte <a href="/register"> ici </a> </p>
+
+    <button type="submit" class="btn btn-success"> Se connecter </button>
+    
+</form>
+
+
+
+{%endblock%}

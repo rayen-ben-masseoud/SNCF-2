@@ -1,0 +1,24 @@
+{% extends "main/base.html" %}
+
+{%block title %}
+Réservation
+{%endblock%}
+{%block content%}
+<u1>
+    
+    {%csrf_token%}
+    <li> Réservation numéro {{rs.num_reservation}}</li>
+    <p>  </p>
+    <p> Date de réservation:  {{rs.date_reservation}}</p>
+    <p> Trajet:  {{rs.trajet}}</p>
+    <p> Numéro de place:  {{rs.num_place}}</p>
+    <li> Passager: </li>
+    <p> </p>    
+    <p> Prénom:  {{rs.passager.prénom}}</p>
+    <p> Nom:  {{rs.passager.nom}}</p>
+    <p> Date de naissance:  {{rs.passager.date_de_naissance}}</p>
+    <a  href="/edit_reservation/{{rs.id}}">
+    <button type="redirect" class="btn btn-success"> Modifier </button>
+    </a>
+</u1>   
+{%endblock%}
