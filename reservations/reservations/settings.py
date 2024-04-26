@@ -66,13 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
-
-WSGI_APPLICATION = 'reservations.wsgi.application'
-
+            ],<img src="static/{{i.name}}.jpg" height=300px width=400px >
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
