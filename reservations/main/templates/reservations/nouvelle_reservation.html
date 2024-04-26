@@ -15,28 +15,9 @@ Créer une réservation
         {{ form|crispy}}
         
         
-
+        <p>  </p>
         <button type="submit" class="btn btn-success"> Valider </button>
-        {% if form1.errors or form.errors%}
-            <div class="alert alert-danger alert-dismissible col-12 mx-1" role="alert">
-                <div id="form_errors">
-                    {% for key, value in form1.errors.items %}
-                        <span class="fieldWrapper">
-                            {{ key }}:{{ value }}
-                        </span>
-                    {% endfor %}
-                    {% for key, value in form.errors.items %}
-                        <span class="fieldWrapper">
-                            {{ key }}:{{ value }}
-                        </span>
-                    {% endfor %}
         
-                </div>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        {% endif %}
     </form>
 
     

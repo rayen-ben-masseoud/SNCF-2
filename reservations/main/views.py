@@ -28,12 +28,16 @@ def reservation(request,id):
     r=Reservation.objects.filter(client=request.user)
     rs=r.get(id=id)
     return render(request,"reservations/reservation.html",{'r':r,'rs':rs})
-
+@login_required()
+def infos(request):
+    client=request.user
+    
+    return render(request,"main/infos.html",{'c':client}) 
 
 @login_required()
 def edit_reservation(request,id=None):
-    today=now().date()
-    t=Trajet.objects.filter(date_depart__gte=today)
+   
+    
     if id:
         reservation=get_object_or_404(Reservation,pk=id)
         passager1=reservation.passager
@@ -58,15 +62,14 @@ def edit_reservation(request,id=None):
             messages.error(request, "Error")
             
             
+            
     
     else:
         
         form=ReservationForm(instance=reservation)
         form1=PassagerForm(instance=passager1)
     return render(request,'reservations/nouvelle_reservation.html',{'form':form,'reservation':reservation,'form1':form1})
-@login_required()
-def infos(request):
-    client=request.user
-    
-    return render(request,"main/infos.html",{'c':client})  
+ 
+
+
     
